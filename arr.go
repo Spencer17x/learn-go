@@ -36,4 +36,12 @@ func main() {
 	arr5 := [3]int{1, 2, 3}
 	doArr2(arr5[:])
 	fmt.Println("arr5", arr5)
+
+	arr6 := []int{1, 2, 3, 4, 5, 6}
+	s3 := append(arr6[1:2], arr6[1:4]...)
+	fmt.Println("s3", s3)
+	fmt.Println("cap(s3)", cap(s3))
+	fmt.Println("len(s3)", len(s3))
+	fmt.Println("cap(arr6)", cap(arr6))
+	fmt.Println("len(arr6)", len(arr6))
 }
