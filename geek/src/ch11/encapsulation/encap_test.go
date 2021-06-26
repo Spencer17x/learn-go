@@ -12,6 +12,16 @@ type Employee struct {
 	Age  int
 }
 
+// func (e *Employee) String() string {
+// 	fmt.Printf("Address is %x\n", unsafe.Pointer(&e.Name))
+// 	return fmt.Sprintf("ID:%s-Name:%s-Age:%d", e.Id, e.Name, e.Age)
+// }
+
+func (e Employee) String() string {
+	fmt.Printf("Address is %x\n", unsafe.Pointer(&e.Name))
+	return fmt.Sprintf("ID:%s-Name:%s-Age:%d", e.Id, e.Name, e.Age)
+}
+
 func TestCreateEmployeeObj(t *testing.T) {
 	e := Employee{"0", "Bob", 20}
 	e1 := Employee{Name: "Mike", Age: 20}
@@ -25,16 +35,6 @@ func TestCreateEmployeeObj(t *testing.T) {
 	t.Log(e2)
 	t.Logf("e is %T", e)
 	t.Logf("e2 is %T", e2)
-}
-
-// func (e *Employee) String() string {
-// 	fmt.Printf("Address is %x\n", unsafe.Pointer(&e.Name))
-// 	return fmt.Sprintf("ID:%s-Name:%s-Age:%d", e.Id, e.Name, e.Age)
-// }
-
-func (e Employee) String() string {
-	fmt.Printf("Address is %x\n", unsafe.Pointer(&e.Name))
-	return fmt.Sprintf("ID:%s-Name:%s-Age:%d", e.Id, e.Name, e.Age)
 }
 
 func TestStructOperations(t *testing.T) {
